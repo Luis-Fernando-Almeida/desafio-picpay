@@ -7,7 +7,12 @@ services:
       - db
   db:
     image: postgres:alpine3.15
+    volumes:
+      - db_data:/var/lib/postgresql/data
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: 1234
       POSTGRES_DB: picpay_db
+
+volumes:
+  db_data:
