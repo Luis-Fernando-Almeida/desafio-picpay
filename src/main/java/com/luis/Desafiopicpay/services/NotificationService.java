@@ -2,6 +2,7 @@ package com.luis.Desafiopicpay.services;
 
 import com.luis.Desafiopicpay.domain.user.User;
 import com.luis.Desafiopicpay.dtos.NotificationDTO;
+import com.luis.Desafiopicpay.exceptions.NotificationServiceDownException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -20,7 +21,7 @@ public class NotificationService {
         ResponseEntity<String> notificationResponse = restTemplate.postForEntity("https://run.mocky.io/v3/54dc2cf1-3add-45b5-b5a9-6bf7e7f1f4a6", notificationRequest, String.class);
         if (!(notificationResponse.getStatusCode() == HttpStatus.OK)) {
             System.out.println("Erro ao enviar notificação");
-            throw new Exception("Serviço de notificação está fora do ar");
+            throw new NotificationServiceDownException("Serviço de notificação está fora do ar");
         }
 
     }
