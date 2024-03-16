@@ -2,15 +2,15 @@ package com.luis.Desafiopicpay.domain.transaction;
 
 import com.luis.Desafiopicpay.domain.user.User;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode
+@Getter
+@Setter
 @Entity(name = "transactions")
 public class Transaction {
     @Id
