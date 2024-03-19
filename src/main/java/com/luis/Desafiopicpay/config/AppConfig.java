@@ -1,4 +1,4 @@
-package com.luis.Desafiopicpay.domain.config;
+package com.luis.Desafiopicpay.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

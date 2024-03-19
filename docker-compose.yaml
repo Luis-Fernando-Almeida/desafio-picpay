@@ -1,3 +1,5 @@
+version: '3.8'
+
 services:
   api:
     image: desafio-picpay
@@ -5,13 +7,26 @@ services:
       - "8080:8080"
     depends_on:
       - db
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/picpay_database
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=1234
+    networks:
+      - picpay_network
+
   db:
     image: postgres:alpine3.15
     volumes:
-      - db_data:/var/lib/postgresql/data
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: 1234
       POSTGRES_DB: picpay_db
-volumes:
-  db_data:
+    ports:
+      - "5432:5432"
+    networks:
+      - picpay_network
+
+networks:
+  picpay_network:
+    driver: bridge
