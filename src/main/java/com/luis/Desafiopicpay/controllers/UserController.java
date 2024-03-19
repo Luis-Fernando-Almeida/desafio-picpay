@@ -1,4 +1,4 @@
-package com.luis.Desafiopicpay.domain.controllers;
+package com.luis.Desafiopicpay.controllers;
 
 import com.luis.Desafiopicpay.domain.user.User;
 import com.luis.Desafiopicpay.services.UserService;
