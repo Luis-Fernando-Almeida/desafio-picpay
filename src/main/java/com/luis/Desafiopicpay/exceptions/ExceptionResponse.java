@@ -15,6 +15,6 @@ public class ExceptionResponse {
     private String title;
     private String details;
     private int status;
-    private LocalDateTime timestamp;
+    private LocalDateTime timeStamp;
     private String path;
 }
