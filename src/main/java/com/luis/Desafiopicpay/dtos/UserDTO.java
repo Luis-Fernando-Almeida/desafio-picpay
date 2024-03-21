@@ -10,7 +10,6 @@ public record UserDTO(
         String lastName,
         String document,
         String email,
-        String password,
         BigDecimal balance,
         UserType userType
 ) {

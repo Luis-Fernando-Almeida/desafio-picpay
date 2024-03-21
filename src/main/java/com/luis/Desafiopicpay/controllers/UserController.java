@@ -18,18 +18,14 @@ public class UserController {
     public UserController(UserService service) {
         this.service = service;
     }
+
     @GetMapping
     public ResponseEntity<List<User>> findAll() {
         List<User> list = service.findAll();
         return ResponseEntity.ok().body(list);
     }
-    public ResponseEntity<User> findUserById(@PathVariable Long id) {
-        User obj = service.findUserById(id);
-        return ResponseEntity.ok().body(obj);
-    }
-
     @PostMapping
-    public ResponseEntity<User> save(@RequestBody User user){
+    public ResponseEntity<User> save(@RequestBody User user) {
         User newUser = service.saveUser(user);
         return ResponseEntity.status(HttpStatus.CREATED).body(newUser);
     }
