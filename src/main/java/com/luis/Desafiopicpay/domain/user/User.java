@@ -2,15 +2,16 @@ package com.luis.Desafiopicpay.domain.user;
 
 import jakarta.persistence.*;
 
-
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Objects;
 
 @Entity(name = "users")
-public class User {
+public class User implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String firstName;
     private String lastName;
     @Column(unique = true)

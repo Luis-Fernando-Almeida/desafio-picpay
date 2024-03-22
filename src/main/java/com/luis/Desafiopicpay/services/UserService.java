@@ -11,7 +11,6 @@ import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class UserService {
@@ -24,7 +23,7 @@ public class UserService {
     }
 
     public User findUserById(Long id) {
-        return this.repository.findById(id).orElseThrow(() -> new UserNotFoundException("pinto"));
+        return this.repository.findById(id).orElseThrow(() -> new UserNotFoundException("Usuário não encontrado"));
     }
 
     public User saveUser(User user) {

@@ -29,4 +29,10 @@ public class UserController {
         User newUser = service.saveUser(user);
         return ResponseEntity.status(HttpStatus.CREATED).body(newUser);
     }
+
+    @GetMapping(value = "/{id}")
+    public ResponseEntity<User> findById(@PathVariable Long id) {
+        User user = service.findUserById(id);
+        return ResponseEntity.ok().body(user);
+    }
 }
