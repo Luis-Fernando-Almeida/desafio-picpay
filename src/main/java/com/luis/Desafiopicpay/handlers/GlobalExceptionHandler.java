@@ -60,7 +60,7 @@ public class GlobalExceptionHandler {
 
         return new ResponseEntity<>(
                 ExceptionResponse.builder()
-                        .title("User not found, check the documentation ")
+                        .title("Usuário não encontrado")
                         .status(HttpStatus.NOT_FOUND.value())
                         .details(ex.getMessage())
                         .timeStamp(LocalDateTime.now())
